@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
 const BookCard = ({ book }) => {
   return (
@@ -15,13 +16,14 @@ const BookCard = ({ book }) => {
             ${book.price}
         </p>
 
-        {/* View Details button */}
-      <Link
-        to={`/books/${book.id}`}
-        className="block w-full mt-4 text-center bg-yellow-100 text-zinc-900 font-semibold py-2 rounded-lg hover:bg-yellow-200 transition"
-      >
-        View Details
-      </Link>
+        <Link
+          to={`/books/${book.id}`}
+          className="w-full mt-4 block text-center bg-yellow-100 text-zinc-900 font-semibold py-2 rounded-lg hover:bg-yellow-200 transition"
+        >
+          View Details
+        </Link>
+
+        
     </div>
   );
 };

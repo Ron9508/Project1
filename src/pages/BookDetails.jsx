@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams, Link } from "react-router-dom"
-import { books } from "./data/booksData"
+import { books } from "../data/booksData"
 
 const BookDetails = () => {
     const { id } = useParams();
