@@ -8,6 +8,8 @@ import Books from './pages/Books'
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import BookDetails from "./pages/BookDetails"
+import Footer from './components/Footer'
+import Cart from './pages/Cart'
 
 const App = () => {
   return (
@@ -21,8 +23,11 @@ const App = () => {
         <Route path="/books" element={<Books />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/footer" element={<Footer />} />
+        <Route path="/cart" element={<Cart />} />
         {/* NEW dynamic route */}
         <Route path="/books/:id" element={<BookDetails />} />
+
       </Routes>
     </BrowserRouter>
   )

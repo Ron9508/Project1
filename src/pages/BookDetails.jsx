@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams, Link } from "react-router-dom"
 import { books } from "../data/booksData"
+import { CartContext } from "../context/CartContext"
+
 
 const BookDetails = () => {
     const { id } = useParams();
+    const { addToCart } = useContext(CartContext);
 
     // Find the book  with this id
     const book = books.find((b) => String(b.id) === String(id));
@@ -29,7 +32,6 @@ const BookDetails = () => {
         </div>
     );
 }
-
 
 
   return (
@@ -69,26 +71,29 @@ const BookDetails = () => {
 
                 {/* Description */}
                 <p className="text-zinc-200 mb-6">
-                    {book.description
-                    ? book.description
-                    : "No description available for this book yet."}
+                        {book.description || "No description available for this book yet."}
                 </p>
 
+                {/* Buttons */}
                 <div className="flex flex-wrap gap-3">
-                    <button className="px-6 py-2 rounded-lg bg-yellow-100 text-zinc-900 font-semibold hover:bg-yellow-200 transition">
-                    Add to Cart
+                    <button
+                        onClick={() => addToCart(book)}
+                        className="px-6 py-2 rounded-lg bg-yellow-100 text-zinc-900 font-semibold hover:bg-yellow-200 transition"
+                        >
+                        Add to Cart
                     </button>
 
                     <Link
-                    to="/books"
-                    className="px-6 py-2 rounded-lg border border-zinc-600 text-zinc-200 hover:bg-zinc-800 transition"
-                    >
-                    Back to all books
+                        to="/books"
+                        className="px-6 py-2 rounded-lg border border-zinc-600 text-zinc-200 hover:bg-zinc-800 transition"
+                        >
+                        Back to all books
                     </Link>
-                </div>
+                </div>  
             </div>
         </div>
     </div>
+    
   );
 };
 

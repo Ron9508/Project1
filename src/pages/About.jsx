@@ -1,42 +1,48 @@
-import React from 'react'
+import React from "react";
 
 const About = () => {
   return (
-    <div className='min-h-screen px-6 py-16 bg-white text-gray-900'>
-        <div className='max-w-4xl mx-auto'>
+    <div className="min-h-screen bg-zinc-900 text-white py-16 px-6">
+      <div className="max-w-4xl mx-auto">
+        
+        {/* Title */}
+        <h1 className="text-4xl lg:text-5xl font-semibold text-yellow-100 text-center mb-8">
+          About Us
+        </h1>
 
-            <h1 className='text-4xl font-bold mb-6 text-yellow-700 text-center'>
-                About Us
-            </h1>
+        {/* Intro Paragraph */}
+        <p className="text-lg text-zinc-300 leading-relaxed mb-10 text-center">
+          Welcome to <span className="text-yellow-200 font-semibold">BookStore</span>,
+          your go-to place to discover new stories, grow your knowledge, and explore books 
+          across every genre. Our mission is simple: make reading accessible, enjoyable, 
+          and part of your everyday life.
+        </p>
 
-            <p className='test-lg leading-relaxed text-gray-700 mb-6'>
-                Welcome to <span className="font-semibold text-yellow-700">BookStore</span>, 
-                your space to discover new stories, learn new ideas, and explore books across every genre.
-                Our goal is simple: make it easy for readers to find books they'll enjoy and return 
-                to reading as a daily habit.
-            </p>
-
-            <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                Whether you're into fiction, technology, personal development, or academic references, 
-                we've curated a selection that's designed to help you grow, relax, and stay inspired. 
-                We believe books can shape lives — and that everyone should have access to the right book 
-                at the right time.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-yellow-700 mt-10 mb-4">Our Mission</h2>
-            <p className="text-lg leading-relaxed text-gray-700 mb-6">
-            To support readers of all ages by offering a simple and enjoyable browsing experience, 
-            connecting them with books that matter, and encouraging continuous learning.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-yellow-700 mt-10 mb-4">Why We Exist</h2>
-            <ul className="list-disc list-inside text-gray-700 text-lg space-y-2">
-                <li>To help readers find valuable books easily.</li>
-                <li>To provide a clean and organized way to explore genres.</li>
-                <li>To make reading accessible and enjoyable every day.</li>
-            </ul>
-            
+        {/* Section 1: Our Story */}
+        <div className="bg-zinc-800 p-6 rounded-xl shadow-lg mb-8">
+          <h2 className="text-2xl font-semibold text-yellow-200 mb-3">
+            Our Story
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            Whether you're into fiction, technology, personal development, or academic 
+            resources, we've curated a selection to help you grow, relax, and stay inspired.
+            We believe that books can change lives — and that everyone deserves access to the
+            right book at the right time.
+          </p>
         </div>
+
+        {/* Section 2: Mission */}
+        <div className="bg-zinc-800 p-6 rounded-xl shadow-lg">
+          <h2 className="text-2xl font-semibold text-yellow-200 mb-3">
+            Our Mission
+          </h2>
+          <p className="text-zinc-300 leading-relaxed">
+            Our mission is to support readers of all ages by offering a simple and enjoyable 
+            browsing experience. We connect people with the books that matter most to them 
+            and encourage continuous learning, creativity, and growth.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
