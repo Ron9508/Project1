@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { books } from "../data/booksData"
+import BookCard from '../components/BookCard';
 
 const Books = () => {
     const [search, setSearch] = useState("");
@@ -57,26 +58,28 @@ const Books = () => {
         {/* Books Grid */}
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
             {filteredBooks.map((book) => (
-                <div
-                key={book.id}
-                className='bg-zinc-800 p-4 rounded-xl shadow-lg hover:bg-zinc-700 transition'
-                >
-                    <img 
-                    src={book.image} 
-                    alt={book.title} 
-                    className='w-full h-64 object-cover rounded-lg'
-                    />
-                    <h2 className='text-xl font-semibold mt-4'>{book.title}</h2>
-                    <p className='text-zinc-300'>{book.author}</p>
-                    <p className='text-yellow-100 font-semibold mt-2'>
-                        ${book.price}
-                    </p>
+                <BookCard key={book.id} book={book} />
+                // or
+                // <div
+                // key={book.id}
+                // className='bg-zinc-800 p-4 rounded-xl shadow-lg hover:bg-zinc-700 transition'
+                // >
+                //     <img 
+                //     src={book.image} 
+                //     alt={book.title} 
+                //     className='w-full h-64 object-cover rounded-lg'
+                //     />
+                //     <h2 className='text-xl font-semibold mt-4'>{book.title}</h2>
+                //     <p className='text-zinc-300'>{book.author}</p>
+                //     <p className='text-yellow-100 font-semibold mt-2'>
+                //         ${book.price}
+                //     </p>
 
-                    {/* View Details button */}
-                    <button className='w-full mt-4 bg-yellow-100 text-zinc-900 font-semibold py-2 rounded-lg hover:bg-yellow-200 transition'>
-                        View Details
-                    </button>
-                </div>
+                //     {/* View Details button */}
+                //     <button className='w-full mt-4 bg-yellow-100 text-zinc-900 font-semibold py-2 rounded-lg hover:bg-yellow-200 transition'>
+                //         View Details
+                //     </button>
+                // </div>
             ))}
         </div>
     </div>
