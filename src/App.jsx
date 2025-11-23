@@ -7,6 +7,7 @@ import About from './pages/About'
 import Books from './pages/Books'
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import BookDetails from "./pages/BookDetails"
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
         <Route path="/books" element={<Books />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        {/* NEW dynamic route */}
+        <Route path="/books/:id" element={<BookDetails />} />
       </Routes>
     </BrowserRouter>
   )
