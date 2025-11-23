@@ -8,7 +8,7 @@ import Books from './pages/Books'
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 
-function App = () => {
+const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
